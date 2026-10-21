@@ -1,0 +1,8 @@
+IMÁGENES USADAS (todas dentro de esta carpeta)
+princesa.png / princesa-sobre.png / princesa-sentada.png  -> princesas
+parpado-*.png          -> ojos cerrados que se superponen para hacer el parpadeo
+rana-cuerpo.png, rana-pata1.png, rana-pata2.png -> rana que camina (3 capas)
+ranita.png             -> rana que salta al final
+corona.png, flores-*.png, flor-blanca.png, ramo.png -> decoración floral (blancas)
+foto1.jpg foto2.jpg foto3.jpg -> tus fotos (reemplázalas por otras con el mismo nombre)
+La canción es musica.mp3 (junto a index.html).

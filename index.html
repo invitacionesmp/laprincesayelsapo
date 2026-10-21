@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#cfe3bb">
+<title>Mis XV Años</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lora:wght@400;500&family=Mr+Dafoe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- Mariposa reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="bw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f8dc"/><stop offset="1" stop-color="#8fb26a"/></linearGradient>
+  <g id="wl"><path d="M32 27C27 5 7 0 4 15c-2 10 13 15 28 12z" fill="url(#bw)" stroke="#d3b877" stroke-width="1.2"/><path d="M32 29C19 31 8 40 14 50c7 6 16-8 18-19z" fill="url(#bw)" stroke="#d3b877" stroke-width="1.2"/><circle cx="14" cy="15" r="3" fill="#fff" opacity=".7"/><circle cx="17" cy="44" r="2.2" fill="#fff" opacity=".7"/></g>
+  <symbol id="bf" viewBox="0 0 64 56"><use href="#wl"/><use href="#wl" transform="translate(64 0) scale(-1 1)"/><ellipse cx="32" cy="30" rx="1.9" ry="12" fill="#5b6f45"/><path d="M31 19c-3-6-6-8-8-8M33 19c3-6 6-8 8-8" stroke="#5b6f45" fill="none" stroke-width="1.1" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<canvas id="fx"></canvas>
+<audio id="musica" src="musica.mp3" preload="auto"></audio>
+
+<!-- ===== PORTADA: SOBRE ===== -->
+<div id="cover">
+  <img class="deco c-tr" src="img/flores-esquina.png" alt="">
+  <img class="deco c-bl" src="img/flores-esquina-inf.png" alt="">
+  <div class="env" id="env">
+    <div class="env-back"></div>
+    <div class="letter"><h1 class="script" data-name></h1><p class="caps">MIS XV AÑOS</p></div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <div class="pb sobre" style="--ll:38.406%;--lt:13.687%;--lw:8.841%;--bd:.4s">
+      <img class="base" src="img/princesa-sobre.png" alt=""><img class="lids" src="img/parpado-sobre.png" alt=""><div class="glints"></div>
+    </div>
+    <svg class="mariposa b1"><use href="#bf"/></svg>
+  </div>
+  <p class="tap">Toca para abrir</p>
+</div>
+
+<!-- ===== INVITACIÓN ===== -->
+<main id="inv">
+  <img class="deco flores-tr par" data-s=".15" src="img/flores-esquina.png" alt="">
+  <img class="deco flores-bl par" data-s="-.05" src="img/flores-esquina-inf.png" alt="">
+
+  <button id="musicBtn" aria-label="Música" title="Música">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="21"/><path d="M20 33V15l11 3v4l-11-3"/><circle cx="17" cy="33" r="3.4"/></svg>
+    <i class="slash"></i>
+  </button>
+
+  <!-- PORTADA -->
+  <section class="hero">
+    <div class="stage">
+      <div class="princesa float">
+        <div class="bust"><div class="pb" style="--ll:40.519%;--lt:17.047%;--lw:8.014%;--bd:1.2s">
+          <img class="base" src="img/princesa.png" alt=""><img class="lids" src="img/parpado-princesa.png" alt=""><div class="glints"></div>
+        </div></div>
+      </div>
+      <div class="wreath">
+        <img class="wreath-img" src="img/corona.png" alt="">
+        <svg class="mariposa b2"><use href="#bf"/></svg>
+        <div class="wreath-txt rv zoom"><h2 class="script name" data-name></h2><p class="caps">MIS XV AÑOS</p></div>
+      </div>
+    </div>
+    <p class="intro rv">Con el corazón lleno de ilusión, quiero compartir contigo un momento único en mi vida. ¡Te espero con los brazos abiertos para celebrar mis 15 años!</p>
+    <div class="photos">
+      <img class="deco lat" src="img/flores-lateral.png" alt="">
+      <figure class="frame f1 rv left"><img src="img/foto1.jpg" alt=""><i class="sheen"></i></figure>
+      <figure class="frame f2 rv right"><img src="img/foto2.jpg" alt=""><i class="sheen"></i></figure>
+      <figure class="frame f3 rv"><img src="img/foto3.jpg" alt=""><i class="sheen"></i></figure>
+      <img class="deco rosa r0" src="img/flores-arco.png" alt="">
+    </div>
+  </section>
+
+  <!-- CUENTA REGRESIVA -->
+  <section class="count">
+    <svg class="mariposa b3"><use href="#bf"/></svg>
+    <h3 class="script rv wipe">¿Cuánto falta?</h3>
+    <div class="cd rv">
+      <div><b id="d">00</b><small>D</small></div><span>:</span>
+      <div><b id="h">00</b><small>H</small></div><span>:</span>
+      <div><b id="m">00</b><small>M</small></div><span>:</span>
+      <div><b id="s">00</b><small>S</small></div>
+    </div>
+  </section>
+
+  <!-- DETALLES -->
+  <section class="details">
+    <div class="arch gold rv left">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="6" y="9" width="36" height="32" rx="4"/><path d="M6 19h36M15 5v8M33 5v8M14 26h4M22 26h4M30 26h4M14 33h4M22 33h4M30 33h4"/></svg>
+      <p class="caps" id="dia"></p><p class="caps" id="fecha"></p>
+      <i class="glit"></i>
+    </div>
+    <img class="deco rosa r1" src="img/flores-arco.png" alt="">
+    <div class="arch green rv right">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="24" cy="24" r="19"/><path d="M24 11v13l8 6M24 6v3M24 39v3M6 24h3M39 24h3"/></svg>
+      <p class="caps">A las</p><p class="caps" id="hora"></p>
+      <i class="glit"></i>
+    </div>
+    <img class="deco rosa r2" src="img/flores-arco.png" alt="">
+    <div class="sentada">
+      <div class="pb float" style="--ll:53.333%;--lt:12.432%;--lw:9.111%;--bd:2.1s">
+        <img class="base" src="img/princesa-sentada.png" alt=""><img class="lids" src="img/parpado-sentada.png" alt=""><div class="glints"></div>
+      </div>
+    </div>
+    <div class="stamp rv zoom">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M24 43S9 29 9 19a15 15 0 0130 0c0 10-15 24-15 24z"/><circle cx="24" cy="19" r="5.5"/></svg>
+      <p class="caps lg" id="lugar1"></p><p class="caps sm" id="lugar2"></p>
+    </div>
+    <img class="deco rosa r3" src="img/flores-arco.png" alt="">
+  </section>
+
+  <!-- MAPA -->
+  <section class="map">
+    <div class="trail rv">
+      <div class="walker"><div class="flip"><div class="frog">
+        <img class="fb" src="img/rana-cuerpo.png" alt=""><img class="fl l" src="img/rana-pata1.png" alt=""><img class="fl r" src="img/rana-pata2.png" alt="">
+      </div></div></div>
+      <i class="path"></i>
+      <svg class="pin" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M24 43S9 29 9 19a15 15 0 0130 0c0 10-15 24-15 24z"/><circle cx="24" cy="19" r="5.5"/></svg>
+    </div>
+    <h3 class="script rv wipe">¿Cómo llegar?</h3>
+    <p class="sub rv">Usa dos dedos para navegar<br>por el mapa</p>
+    <iframe class="rv" id="mapa" loading="lazy" title="Mapa" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- CONFIRMACIÓN -->
+  <section class="rsvp">
+    <img class="ramo rv" src="img/ramo.png" alt="">
+    <h3 class="script rv wipe">Confirma tu asistencia</h3>
+    <p class="sub rv">Completando el siguiente formulario</p>
+    <form id="form" class="rv" novalidate>
+      <label>Tu nombre<input id="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required></label>
+      <fieldset><legend>¿Vas a asistir?</legend>
+        <label class="opt"><input type="radio" name="asiste" value="Asistiré, nos vemos ahí"><span>Asistiré, nos vemos ahí</span></label>
+        <label class="opt"><input type="radio" name="asiste" value="Lo siento, no podré ir"><span>Lo siento, no podré ir</span></label>
+      </fieldset>
+      <button type="submit" class="btn">ENVIAR</button>
+      <p id="msg" role="status"></p>
+    </form>
+    <div class="final">
+      <div class="pb float" style="--ll:40.519%;--lt:17.047%;--lw:8.014%;--bd:3.1s">
+        <img class="base" src="img/princesa.png" alt=""><img class="lids" src="img/parpado-princesa.png" alt=""><div class="glints"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGALO -->
+  <section class="gift">
+    <svg class="ico rv" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="36" height="8" rx="1.5"/><path d="M8 26v16h32V26M24 18v24M24 18c-3-8-12-8-11-3s8 3 11 3zM24 18c3-8 12-8 11-3s-8 3-11 3z"/></svg>
+    <p class="rv">El mejor regalo será tu presencia, pero si aún así deseas hacerme un obsequio, te dejo una sugerencia:</p>
+    <p class="rv alias">ALIAS: <span id="alias"></span></p>
+    <img class="rosa-g rv zoom" src="img/flor-blanca.png" alt="">
+    <h3 class="script rv wipe">¡Te esperamos!</h3>
+    <img class="ranita hop" src="img/ranita.png" alt="">
+  </section>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
